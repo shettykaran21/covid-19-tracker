@@ -1,7 +1,13 @@
 import React from 'react';
 
-const Overview = () => {
-  return <div className="overview">Overview</div>;
+const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
+  return (
+    <div className="overview">
+      <div>{totalConfirmed}</div>
+      <div>{totalDeaths}</div>
+      <div>{totalRecovered}</div>
+    </div>
+  );
 };
 
 export default Overview;
