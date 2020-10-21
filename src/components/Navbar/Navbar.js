@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../covid.png';
 
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
+  console.log(useLocation());
   return (
     <nav className={`${styles.navbar}`}>
       <div className={`${styles.container} container`}>
@@ -14,22 +15,22 @@ const Navbar = () => {
           </Link>
         </div>
         <ul className={styles.list}>
-          <li>
-            <Link to="/" className={styles.listLink}>
+          <li className={styles.listItem}>
+            <Link to="/" className={`${styles.listLink}`}>
               Home
             </Link>
           </li>
-          <li>
+          <li className={styles.listItem}>
             <Link to="/map" className={styles.listLink}>
               Map
             </Link>
           </li>
-          <li>
+          <li className={styles.listItem}>
             <Link to="/contact" className={styles.listLink}>
               Contact
             </Link>
           </li>
-          <li>
+          <li className={styles.listItem}>
             <Link to="/about" className={styles.listLink}>
               About
             </Link>
