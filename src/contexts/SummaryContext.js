@@ -20,9 +20,9 @@ const SummaryContextProvider = (props) => {
     setTotalDeaths(global.TotalDeaths);
     setTotalRecovered(global.TotalRecovered);
 
-    console.log(totalConfirmed);
-    console.log(totalDeaths);
-    console.log(totalRecovered);
+    // console.log(totalConfirmed);
+    // console.log(totalDeaths);
+    // console.log(totalRecovered);
   };
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const SummaryContextProvider = (props) => {
 
   return (
     <SummaryContext.Provider
-      value={(totalDeaths, totalRecovered, totalConfirmed)}
+      value={{ totalDeaths, totalRecovered, totalConfirmed }}
     >
       {props.children}
     </SummaryContext.Provider>
