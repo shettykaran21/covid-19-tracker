@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './Overview.module.css';
+
 const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
   const formatNumber = (num) => {
     num = num.toString();
@@ -23,10 +25,23 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
   };
 
   return (
-    <div className="overview">
-      <div>{formatNumber(totalConfirmed)}</div>
-      <div>{formatNumber(totalDeaths)}</div>
-      <div>{formatNumber(totalRecovered)}</div>
+    <div className={styles.overview}>
+      <div>
+        <div className={styles.number}>{formatNumber(totalConfirmed)}</div>
+        Total Confirmed
+      </div>
+      <div>
+        <div className={styles.number} style={{ color: '#c22808ff' }}>
+          {formatNumber(totalDeaths)}
+        </div>
+        Total Deaths
+      </div>
+      <div>
+        <div className={styles.number} style={{ color: '#6cf22e' }}>
+          {formatNumber(totalRecovered)}
+        </div>
+        Total Recovered
+      </div>
     </div>
   );
 };

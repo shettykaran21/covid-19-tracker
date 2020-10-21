@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.overview {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.number {
+  font-family: Audiowide, sans-serif;
+  font-size: 4rem;
+}
