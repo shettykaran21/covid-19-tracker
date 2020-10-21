@@ -1,17 +1,10 @@
 import React from 'react';
-import {
-  FaHeart,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaLinkedinIn,
-} from 'react-icons/fa';
+import { FaHeart, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 import styles from './Footer.module.css';
 
 const Footer = () => {
   return (
-    //  fa-heart footer__icon footer__icon--heart
     <footer className={styles.footer}>
       <div>
         Made with
@@ -22,21 +15,28 @@ const Footer = () => {
         <a
           href="https://www.github.com/shettykaran21"
           target="_blank"
+          rel="noopener noreferrer"
           className={styles.link}
-        ></a>
-        <FaGithub className={`${styles.icon}`} />
+        >
+          <FaGithub className={`${styles.icon}`} />
+        </a>
+
         <a
           href="https://www.linkedin.com/in/shettykaran21/"
           target="_blank"
+          rel="noopener noreferrer"
           className={styles.link}
-        ></a>
-        <FaLinkedin className={`${styles.icon}`} />
+        >
+          <FaLinkedin className={`${styles.icon}`} />
+        </a>
         <a
           href="https://twitter.com/shettykaran21"
           target="_blank"
+          rel="noopener noreferrer"
           className={styles.link}
-        ></a>
-        <FaTwitter className={`${styles.icon}`} />
+        >
+          <FaTwitter className={`${styles.icon}`} />
+        </a>
       </div>
     </footer>
   );
