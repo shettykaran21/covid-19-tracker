@@ -1,0 +1,33 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--charleston-green);
+  height: 10rem;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 6rem;
+  cursor: pointer;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3rem;
+}
+
+.listLink {
+  text-decoration: none;
+  color: #fff;
+}
