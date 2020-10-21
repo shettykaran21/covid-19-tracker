@@ -6,7 +6,7 @@ import {
   Geography,
 } from 'react-simple-maps';
 
-import './Map.css';
+import styles from './Map.css';
 
 const geoUrl =
   'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json';
@@ -23,7 +23,7 @@ const rounded = (num) => {
 
 const Map = ({ setTooltipContent }) => {
   return (
-    <div className="map">
+    <div className={styles.map}>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
         <ZoomableGroup minZoom={1}>
           <Geographies geography={geoUrl}>
