@@ -26,21 +26,26 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
 
   return (
     <div className={styles.overview}>
-      <div>
-        <div className={styles.number}>{formatNumber(totalConfirmed)}</div>
-        Total Confirmed
+      <div style={{ marginBottom: '3rem' }}>
+        <h2>Overview</h2>
       </div>
-      <div>
-        <div className={styles.number} style={{ color: '#c22808ff' }}>
-          {formatNumber(totalDeaths)}
+      <div className={styles.data}>
+        <div>
+          <div className={styles.number}>{formatNumber(totalConfirmed)}</div>
+          Total Confirmed
         </div>
-        Total Deaths
-      </div>
-      <div>
-        <div className={styles.number} style={{ color: '#6cf22e' }}>
-          {formatNumber(totalRecovered)}
+        <div>
+          <div className={styles.number} style={{ color: '#c22808ff' }}>
+            {formatNumber(totalDeaths)}
+          </div>
+          Total Deaths
         </div>
-        Total Recovered
+        <div>
+          <div className={styles.number} style={{ color: '#6cf22e' }}>
+            {formatNumber(totalRecovered)}
+          </div>
+          Total Recovered
+        </div>
       </div>
     </div>
   );
