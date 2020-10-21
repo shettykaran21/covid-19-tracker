@@ -8,7 +8,7 @@ const MyMap = () => {
   const [content, setContent] = useState('');
 
   return (
-    <div>
+    <div style={{ marginTop: '10rem' }}>
       <Title title="Covid-19 Map" />
       <Map setTooltipContent={setContent} />
       <ReactTooltip>{content}</ReactTooltip>

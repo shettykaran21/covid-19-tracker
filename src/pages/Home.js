@@ -9,7 +9,7 @@ const Home = () => {
   );
 
   return (
-    <div>
+    <div className="home" style={{ marginTop: '10rem' }}>
       <Overview
         totalConfirmed={totalConfirmed}
         totalDeaths={totalDeaths}

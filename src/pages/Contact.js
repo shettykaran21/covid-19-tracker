@@ -1,9 +1,10 @@
 import React from 'react';
+import Title from '../components/Title/Title';
 
 const Contact = () => {
   return (
-    <div>
-      <h1>Contact</h1>
+    <div className="contact" style={{ marginTop: '10rem' }}>
+      <Title title="Contact" />
     </div>
   );
 };
