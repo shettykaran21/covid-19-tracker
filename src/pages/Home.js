@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+
+import covid from '../api/covid';
 
 import Overview from '../components/Overview/Overview';
 import { SummaryContext } from '../contexts/SummaryContext';
 
 const Home = () => {
-  const { totalConfirmed, totalDeaths, totalRecovered } = useContext(
+  const { totalConfirmed, totalDeaths, totalRecovered, date } = useContext(
     SummaryContext
   );
 
@@ -14,6 +16,7 @@ const Home = () => {
         totalConfirmed={totalConfirmed}
         totalDeaths={totalDeaths}
         totalRecovered={totalRecovered}
+        date={date}
       />
     </div>
   );
