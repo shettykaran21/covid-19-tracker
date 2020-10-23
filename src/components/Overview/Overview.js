@@ -3,7 +3,7 @@ import CountUp from 'react-countup';
 
 import styles from './Overview.module.css';
 
-const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
+const Overview = ({ totalConfirmed, totalDeaths, totalRecovered, date }) => {
   const formatNumber = (num) => {
     num = num.toString();
     let afterPoint = '';
@@ -25,10 +25,35 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
     return res;
   };
 
+  const formatDate = (date) => {
+    const dateObj = new Date(date);
+
+    let hours = dateObj.getHours();
+    let minutes = dateObj.getMinutes();
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    // console.log(new Date().getHours(), hours);
+
+    const todayOrYesterday =
+      new Date().getHours() > hours ? 'Yesterday' : 'Today';
+
+    const strTime = hours + ':' + minutes + ' ' + ampm;
+
+    return `${todayOrYesterday} ${strTime}`;
+  };
+
   return (
     <div className={styles.overview}>
       <div style={{ marginBottom: '3rem' }}>
         <h2>Overview</h2>
+        <p style={{ fontWeight: '300', color: '#aaa', fontSize: '1.6rem' }}>
+          Last Updated:{' '}
+          <span>
+            {/* {new Date(date).toString()} */}
+            {formatDate(date)}
+          </span>
+        </p>
       </div>
       <div className={styles.data}>
         <div>
@@ -39,7 +64,7 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
               formattingFn={formatNumber}
             />
           </div>
-          Total Confirmed
+          <span>Total Confirmed</span>
         </div>
         <div>
           <div className={styles.number} style={{ color: '#c22808ff' }}>
@@ -49,7 +74,7 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
               formattingFn={formatNumber}
             />
           </div>
-          Total Deaths
+          <span>Total Deaths</span>
         </div>
         <div>
           <div className={styles.number} style={{ color: '#6cf22e' }}>
@@ -59,7 +84,7 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
               formattingFn={formatNumber}
             />
           </div>
-          Total Recovered
+          <span>Total Recovered</span>
         </div>
       </div>
     </div>
