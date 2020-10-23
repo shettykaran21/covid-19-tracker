@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from 'react-countup';
 
 import styles from './Overview.module.css';
 
@@ -31,18 +32,32 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
       </div>
       <div className={styles.data}>
         <div>
-          <div className={styles.number}>{formatNumber(totalConfirmed)}</div>
+          <div className={styles.number}>
+            <CountUp
+              start={40000000}
+              end={totalConfirmed}
+              formattingFn={formatNumber}
+            />
+          </div>
           Total Confirmed
         </div>
         <div>
           <div className={styles.number} style={{ color: '#c22808ff' }}>
-            {formatNumber(totalDeaths)}
+            <CountUp
+              start={1000000}
+              end={totalDeaths}
+              formattingFn={formatNumber}
+            />
           </div>
           Total Deaths
         </div>
         <div>
           <div className={styles.number} style={{ color: '#6cf22e' }}>
-            {formatNumber(totalRecovered)}
+            <CountUp
+              start={20000000}
+              end={totalRecovered}
+              formattingFn={formatNumber}
+            />
           </div>
           Total Recovered
         </div>
