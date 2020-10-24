@@ -13,8 +13,10 @@
   --artichoke: #86855dff;
   --rosso-corsa: #c22808ff;
   --pacific-blue: #17a2b8ff;
+  /* --black-dark-1: #19181f; */
   --black-dark-1: #121212;
-  --black-dark-2: #1f1f1f;
+  /* --black-dark-2: #211e27; */
+  --black-dark-2: #1d1d1d;
 }
 
 html {
@@ -27,6 +29,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--platinum);
+  color: #dedede;
   background-color: var(--black-dark-1);
   font-size: 1.6rem;
   min-height: 100vh;
