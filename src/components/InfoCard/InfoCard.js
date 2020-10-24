@@ -14,7 +14,7 @@ const InfoCard = ({ data, title, textColor }) => {
     num = num.toString();
     let lastThree = num.substring(num.length - 3);
     let otherNumbers = num.substring(0, num.length - 3);
-    if (otherNumbers != '') {
+    if (otherNumbers !== '') {
       lastThree = ',' + lastThree;
     }
     let res =
