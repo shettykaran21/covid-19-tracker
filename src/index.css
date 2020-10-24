@@ -13,7 +13,8 @@
   --artichoke: #86855dff;
   --rosso-corsa: #c22808ff;
   --pacific-blue: #17a2b8ff;
-  --charleston-green: #22282aff;
+  --black-dark-1: #121212;
+  --black-dark-2: #1f1f1f;
 }
 
 html {
@@ -26,7 +27,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--platinum);
-  background-color: var(--charleston-green);
+  background-color: var(--black-dark-1);
   font-size: 1.6rem;
   min-height: 100vh;
 }

@@ -56,7 +56,7 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered, date }) => {
         </p>
       </div>
       <div className={styles.data}>
-        <div>
+        <div className={styles.info}>
           <div className={styles.number}>
             <CountUp
               start={40000000}
@@ -66,7 +66,7 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered, date }) => {
           </div>
           <span>Total Confirmed</span>
         </div>
-        <div>
+        <div className={styles.info}>
           <div className={styles.number} style={{ color: '#c22808ff' }}>
             <CountUp
               start={1000000}
@@ -76,7 +76,7 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered, date }) => {
           </div>
           <span>Total Deaths</span>
         </div>
-        <div>
+        <div className={styles.info}>
           <div className={styles.number} style={{ color: '#6cf22e' }}>
             <CountUp
               start={20000000}

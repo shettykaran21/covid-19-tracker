@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 
 import Home from './pages/Home';
-import MyMap from './pages/MyMap';
+import Map from './pages/Map';
 import Contact from './pages/Contact';
 import About from './pages/About';
 
@@ -15,22 +15,22 @@ import './App.css';
 
 const App = () => {
   return (
-    <SummaryContextProvider>
-      <div className="App">
-        <BrowserRouter>
-          <Navbar />
-          <main className="main">
-            <div className="container">
+    <div className="App">
+      <BrowserRouter>
+        <Navbar />
+        <main className="main">
+          <div className="container">
+            <SummaryContextProvider>
               <Route exact path="/" component={Home} global={global} />
-              <Route path="/map" component={MyMap} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/about" component={About} />
-            </div>
-          </main>
-        </BrowserRouter>
-        <Footer />
-      </div>
-    </SummaryContextProvider>
+            </SummaryContextProvider>
+            <Route path="/map" component={Map} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/about" component={About} />
+          </div>
+        </main>
+      </BrowserRouter>
+      <Footer />
+    </div>
   );
 };
 
