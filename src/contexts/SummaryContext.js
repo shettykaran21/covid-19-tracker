@@ -12,11 +12,11 @@ const SummaryContextProvider = (props) => {
   const [newDeaths, setNewDeaths] = useState(0);
   const [newRecovered, setNewRecovered] = useState(0);
   const [date, setDate] = useState('');
+  const [countriesData, setCountriesData] = useState([]);
 
-  const setData = async () => {
+  const getData = async () => {
     const response = await covid.get('/summary');
 
-    // console.log(response.data);
     const responseData = response.data;
     const global = responseData.Global;
 
@@ -27,19 +27,12 @@ const SummaryContextProvider = (props) => {
     setNewConfirmed(global.NewConfirmed);
     setNewDeaths(global.NewDeaths);
     setNewRecovered(global.NewRecovered);
-
-    // console.log(totalConfirmed);
-    // console.log(totalDeaths);
-    // console.log(totalRecovered);
+    setCountriesData(responseData.Countries);
   };
 
   useEffect(() => {
-    setData();
+    getData();
   }, []);
-
-  useEffect(() => {
-    setData();
-  }, [totalConfirmed, totalDeaths, totalRecovered, date]);
 
   return (
     <SummaryContext.Provider
@@ -51,6 +44,7 @@ const SummaryContextProvider = (props) => {
         newConfirmed,
         newDeaths,
         newRecovered,
+        countriesData,
       }}
     >
       {props.children}

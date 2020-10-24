@@ -5,7 +5,7 @@ import logo from '../../covid.png';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
-  console.log(useLocation());
+  // console.log(useLocation());
   return (
     <nav className={`${styles.navbar}`}>
       <div className={`${styles.container} container`}>

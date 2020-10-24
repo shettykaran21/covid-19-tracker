@@ -23,10 +23,12 @@ const App = () => {
             <SummaryContextProvider>
               <Route exact path="/" component={Home} global={global} />
             </SummaryContextProvider>
-            <Route path="/map" component={Map} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/about" component={About} />
           </div>
+          <SummaryContextProvider>
+            <Route path="/map" component={Map} />
+          </SummaryContextProvider>
+          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} />
         </main>
       </BrowserRouter>
       <Footer />

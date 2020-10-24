@@ -5,57 +5,86 @@ import {
   Geographies,
   Geography,
 } from 'react-simple-maps';
+import { scaleLinear } from 'd3-scale';
 
 import styles from './MapChart.module.css';
 
 const geoUrl =
   'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json';
 
-const rounded = (num) => {
-  if (num > 1000000000) {
-    return Math.round(num / 100000000) / 10 + 'B';
-  } else if (num > 1000000) {
-    return Math.round(num / 100000) / 10 + 'M';
-  } else {
-    return Math.round(num / 100) / 10 + 'K';
-  }
-};
+const MapChart = ({ setTooltipContent, countriesData }) => {
+  const COLOR_RANGE = [
+    '#ffedea',
+    '#ffcec5',
+    '#ffad9f',
+    '#ff8a75',
+    '#ff5533',
+    '#e2492d',
+    '#be3d26',
+    '#9a311f',
+    '#782618',
+  ];
 
-const MapChart = ({ setTooltipContent }) => {
+  const DEFAULT_COLOR = '#EEE';
+
+  const colorScale = scaleLinear().domain([0, 50000]).range(COLOR_RANGE);
+
+  const geographyStyle = {
+    default: {
+      outline: 'none',
+    },
+    hover: {
+      fill: '#eee',
+      transition: 'all 250ms',
+      outline: 'none',
+    },
+    pressed: {
+      outline: 'none',
+    },
+  };
+
   return (
-    <div className={styles.map}>
-      <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
-        <ZoomableGroup minZoom={1}>
+    <div className={styles.mapChart}>
+      <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
+        <ZoomableGroup>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
-              geographies.map((geo) => (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  onMouseEnter={() => {
-                    const { NAME, POP_EST } = geo.properties;
-                    console.log(geo.properties);
-                    setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
-                  }}
-                  onMouseLeave={() => {
-                    setTooltipContent('');
-                  }}
-                  style={{
-                    default: {
-                      fill: '#F53',
-                      outline: 'none',
-                    },
-                    hover: {
-                      fill: '#f00',
-                      outline: 'none',
-                    },
-                    pressed: {
-                      fill: '#E42',
-                      outline: 'none',
-                    },
-                  }}
-                />
-              ))
+              geographies.map((geo) => {
+                const current = countriesData.find((s) => {
+                  if (s !== undefined) {
+                    return s.CountryCode === geo.properties.ISO_A2;
+                  }
+                });
+
+                // console.log(current);
+
+                return (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    fill={
+                      current !== undefined
+                        ? colorScale(current.TotalConfirmed)
+                        : DEFAULT_COLOR
+                    }
+                    onMouseEnter={() => {
+                      const { NAME } = geo.properties;
+
+                      setTooltipContent({
+                        NAME: NAME,
+                        TotalConfirmed:
+                          current !== undefined ? current.TotalConfirmed : '',
+                        TotalDeaths:
+                          current !== undefined ? current.TotalDeaths : '',
+                      });
+                    }}
+                    onMouseLeave={() => {
+                      setTooltipContent('');
+                    }}
+                    style={geographyStyle}
+                  />
+                );
+              })
             }
           </Geographies>
         </ZoomableGroup>

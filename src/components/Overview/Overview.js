@@ -1,5 +1,4 @@
 import React from 'react';
-import CountUp from 'react-countup';
 
 import InfoCard from '../InfoCard/InfoCard';
 
@@ -14,26 +13,6 @@ const Overview = ({
   newDeaths,
   newRecovered,
 }) => {
-  const formatNumber = (num) => {
-    num = num.toString();
-    let afterPoint = '';
-    if (num.indexOf('.') > 0) {
-      afterPoint = num.substring(num.indexOf('.'), num.length);
-    }
-    num = Math.floor(num);
-    num = num.toString();
-    let lastThree = num.substring(num.length - 3);
-    let otherNumbers = num.substring(0, num.length - 3);
-    if (otherNumbers != '') {
-      lastThree = ',' + lastThree;
-    }
-    let res =
-      otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ',') +
-      lastThree +
-      afterPoint;
-
-    return res;
-  };
   const formatDate = (date) => {
     const dateObj = new Date(date);
 
@@ -45,10 +24,9 @@ const Overview = ({
     const todayOrYesterday =
       dateObj.getDate() < new Date().getDate() ? 'Yesterday' : 'Today';
 
-    console.log(new Date().getDate(), dateObj.getDate());
+    // console.log(new Date().getDate(), dateObj.getDate());
 
     const strTime = hours + ':' + minutes + ' ' + ampm;
-
     return `${todayOrYesterday} ${strTime}`;
   };
 
@@ -57,11 +35,7 @@ const Overview = ({
       <div style={{ marginBottom: '3rem' }}>
         <h2>Overview</h2>
         <p style={{ fontWeight: '300', color: '#aaa', fontSize: '1.6rem' }}>
-          Last Updated:{' '}
-          <span>
-            {/* {new Date(date).toString()} */}
-            {formatDate(date)}
-          </span>
+          Last Updated: <span>{formatDate(date)}</span>
         </p>
       </div>
       <div className={styles.data}>
