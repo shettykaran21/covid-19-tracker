@@ -8,6 +8,7 @@ const SummaryContextProvider = (props) => {
   const [totalConfirmed, setTotalConfirmed] = useState(0);
   const [totalDeaths, setTotalDeaths] = useState(0);
   const [totalRecovered, setTotalRecovered] = useState(0);
+  const [date, setDate] = useState('');
 
   const setData = async () => {
     const response = await covid.get('/summary');
@@ -19,6 +20,7 @@ const SummaryContextProvider = (props) => {
     setTotalConfirmed(global.TotalConfirmed);
     setTotalDeaths(global.TotalDeaths);
     setTotalRecovered(global.TotalRecovered);
+    setDate(responseData.Date);
 
     // console.log(totalConfirmed);
     // console.log(totalDeaths);
@@ -35,7 +37,7 @@ const SummaryContextProvider = (props) => {
 
   return (
     <SummaryContext.Provider
-      value={{ totalDeaths, totalRecovered, totalConfirmed }}
+      value={{ totalDeaths, totalRecovered, totalConfirmed, date }}
     >
       {props.children}
     </SummaryContext.Provider>
