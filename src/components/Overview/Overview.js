@@ -1,9 +1,19 @@
 import React from 'react';
 import CountUp from 'react-countup';
 
+import InfoCard from '../InfoCard/InfoCard';
+
 import styles from './Overview.module.css';
 
-const Overview = ({ totalConfirmed, totalDeaths, totalRecovered, date }) => {
+const Overview = ({
+  totalConfirmed,
+  totalDeaths,
+  totalRecovered,
+  date,
+  newConfirmed,
+  newDeaths,
+  newRecovered,
+}) => {
   const formatNumber = (num) => {
     num = num.toString();
     let afterPoint = '';
@@ -24,7 +34,6 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered, date }) => {
 
     return res;
   };
-
   const formatDate = (date) => {
     const dateObj = new Date(date);
 
@@ -56,36 +65,28 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered, date }) => {
         </p>
       </div>
       <div className={styles.data}>
-        <div className={styles.info}>
-          <div className={styles.number}>
-            <CountUp
-              start={40000000}
-              end={totalConfirmed}
-              formattingFn={formatNumber}
-            />
-          </div>
-          <span>Total Confirmed</span>
-        </div>
-        <div className={styles.info}>
-          <div className={styles.number} style={{ color: '#c22808ff' }}>
-            <CountUp
-              start={1000000}
-              end={totalDeaths}
-              formattingFn={formatNumber}
-            />
-          </div>
-          <span>Total Deaths</span>
-        </div>
-        <div className={styles.info}>
-          <div className={styles.number} style={{ color: '#6cf22e' }}>
-            <CountUp
-              start={20000000}
-              end={totalRecovered}
-              formattingFn={formatNumber}
-            />
-          </div>
-          <span>Total Recovered</span>
-        </div>
+        <InfoCard data={totalConfirmed} title="Total Confirmed" />
+        <InfoCard
+          data={totalDeaths}
+          title="Total Deaths"
+          textColor="var(--color-red)"
+        />
+        <InfoCard
+          data={totalRecovered}
+          title="Total Recovered"
+          textColor="var(--color-green)"
+        />
+        <InfoCard data={newConfirmed} title="New Confirmed" />
+        <InfoCard
+          data={newDeaths}
+          title="New Deaths"
+          textColor="var(--color-red)"
+        />
+        <InfoCard
+          data={newRecovered}
+          title="New Recovered"
+          textColor="var(--color-green)"
+        />
       </div>
     </div>
   );

@@ -1,0 +1,14 @@
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary-2);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.3);
+}
+
+.number {
+  font-family: Audiowide, sans-serif;
+  font-size: 4rem;
+}

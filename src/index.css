@@ -11,12 +11,13 @@
 :root {
   --platinum: #ebe9eaff;
   --artichoke: #86855dff;
-  --rosso-corsa: #c22808ff;
+  --color-red: #c22808ff;
+  --color-green: #29a90c;
   --pacific-blue: #17a2b8ff;
-  /* --black-dark-1: #19181f; */
-  --black-dark-1: #121212;
-  /* --black-dark-2: #211e27; */
-  --black-dark-2: #1d1d1d;
+  /* --color-primary-1: #19181f; */
+  --color-primary-1: #121212;
+  /* --color-primary-2: #211e27; */
+  --color-primary-2: #1d1d1d;
 }
 
 html {
@@ -30,7 +31,7 @@ body {
   line-height: 1.6;
   color: var(--platinum);
   color: #dedede;
-  background-color: var(--black-dark-1);
+  background-color: var(--color-primary-1);
   font-size: 1.6rem;
   min-height: 100vh;
 }

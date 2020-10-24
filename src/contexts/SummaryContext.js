@@ -8,6 +8,9 @@ const SummaryContextProvider = (props) => {
   const [totalConfirmed, setTotalConfirmed] = useState(0);
   const [totalDeaths, setTotalDeaths] = useState(0);
   const [totalRecovered, setTotalRecovered] = useState(0);
+  const [newConfirmed, setNewConfirmed] = useState(0);
+  const [newDeaths, setNewDeaths] = useState(0);
+  const [newRecovered, setNewRecovered] = useState(0);
   const [date, setDate] = useState('');
 
   const setData = async () => {
@@ -21,6 +24,9 @@ const SummaryContextProvider = (props) => {
     setTotalDeaths(global.TotalDeaths);
     setTotalRecovered(global.TotalRecovered);
     setDate(responseData.Date);
+    setNewConfirmed(global.NewConfirmed);
+    setNewDeaths(global.NewDeaths);
+    setNewRecovered(global.NewRecovered);
 
     // console.log(totalConfirmed);
     // console.log(totalDeaths);
@@ -33,11 +39,19 @@ const SummaryContextProvider = (props) => {
 
   useEffect(() => {
     setData();
-  }, [totalConfirmed, totalDeaths, totalRecovered]);
+  }, [totalConfirmed, totalDeaths, totalRecovered, date]);
 
   return (
     <SummaryContext.Provider
-      value={{ totalDeaths, totalRecovered, totalConfirmed, date }}
+      value={{
+        totalDeaths,
+        totalRecovered,
+        totalConfirmed,
+        date,
+        newConfirmed,
+        newDeaths,
+        newRecovered,
+      }}
     >
       {props.children}
     </SummaryContext.Provider>
