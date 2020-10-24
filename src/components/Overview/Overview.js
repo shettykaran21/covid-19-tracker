@@ -33,10 +33,10 @@ const Overview = ({ totalConfirmed, totalDeaths, totalRecovered, date }) => {
     const ampm = hours >= 12 ? 'pm' : 'am';
     minutes = minutes < 10 ? '0' + minutes : minutes;
 
-    // console.log(new Date().getHours(), hours);
-
     const todayOrYesterday =
-      new Date().getHours() > hours ? 'Yesterday' : 'Today';
+      dateObj.getDate() < new Date().getDate() ? 'Yesterday' : 'Today';
+
+    console.log(new Date().getDate(), dateObj.getDate());
 
     const strTime = hours + ':' + minutes + ' ' + ampm;
 
