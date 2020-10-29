@@ -22,13 +22,14 @@ const App = () => {
           <div className="container">
             <SummaryContextProvider>
               <Route exact path="/" component={Home} global={global} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/about" component={About} />
             </SummaryContextProvider>
           </div>
           <SummaryContextProvider>
             <Route path="/map" component={Map} />
           </SummaryContextProvider>
-          <Route path="/contact" component={Contact} />
-          <Route path="/about" component={About} />
+          {/* <Route path="/:slug" component={About} /> */}
         </main>
       </BrowserRouter>
       <Footer />

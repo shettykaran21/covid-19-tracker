@@ -1,0 +1,12 @@
+.dropdownMenu {
+  font-weight: 400;
+  position: absolute;
+  top: 7.8rem;
+  border: 0.05rem solid var(--color-primary-3);
+  width: 30rem;
+  transform: translateX(-30%);
+  background-color: var(--color-primary-2);
+  border-radius: 1rem;
+  padding: 1.6rem;
+  overflow: hidden;
+}

@@ -9,16 +9,15 @@
 }
 
 :root {
-  --platinum: #ebe9eaff;
+  --color-white: #fff;
   --artichoke: #86855dff;
+  --pacific-blue: #17a2b8ff;
+
   --color-red: #c22808ff;
   --color-green: #29a90c;
-  --pacific-blue: #17a2b8ff;
-  /* --color-primary-1: #19181f; */
-  --color-primary-1: #121212;
-  --color-primary-1: #1e2127;
-  --color-primary-2: #2b2733;
-  /* --color-primary-2: #1d1d1d; */
+  --color-primary-1: #12181b;
+  --color-primary-2: #2a2e35;
+  --color-primary-3: #12181b;
 }
 
 html {
