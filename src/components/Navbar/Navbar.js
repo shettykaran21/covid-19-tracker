@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaCaretDown } from 'react-icons/fa';
 
 import NavItem from '../NavItem/NavItem';
@@ -22,7 +22,11 @@ const Navbar = () => {
           <NavItem menu="Map" path="/map" />
           <NavItem menu="Contact" path="/contact" />
           <NavItem menu="About" path="/about" />
-          <NavItem menu="More" icon={<FaCaretDown />}>
+          <NavItem
+            menu="More"
+            path={useLocation().pathname}
+            icon={<FaCaretDown />}
+          >
             <DropdownMenu />
           </NavItem>
         </ul>
