@@ -15,9 +15,10 @@
 
   --color-red: #c22808ff;
   --color-green: #29a90c;
-  --color-primary-1: #12181b;
-  --color-primary-2: #2a2e35;
-  --color-primary-3: #12181b;
+  --color-grey-1: #12181b;
+  --color-grey-2: #2a2e35;
+  --color-grey-3: #454e56;
+  --color-grey-4: #6c7983;
 }
 
 html {
@@ -31,7 +32,7 @@ body {
   line-height: 1.6;
   color: var(--platinum);
   color: #dedede;
-  background-color: var(--color-primary-1);
+  background-color: var(--color-grey-1);
   font-size: 1.6rem;
   min-height: 100vh;
 }

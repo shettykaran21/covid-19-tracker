@@ -29,7 +29,6 @@ const App = () => {
           <SummaryContextProvider>
             <Route path="/map" component={Map} />
           </SummaryContextProvider>
-          {/* <Route path="/:slug" component={About} /> */}
         </main>
       </BrowserRouter>
       <Footer />

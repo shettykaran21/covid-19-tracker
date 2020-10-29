@@ -34,7 +34,13 @@ const Overview = ({
     <div className={styles.overview}>
       <div style={{ marginBottom: '3rem' }}>
         <h2>Overview</h2>
-        <p style={{ fontWeight: '300', color: '#aaa', fontSize: '1.6rem' }}>
+        <p
+          style={{
+            fontWeight: '300',
+            color: 'var(--color-grey-4)',
+            fontSize: '1.6rem',
+          }}
+        >
           Last Updated: <span>{formatDate(date)}</span>
         </p>
       </div>

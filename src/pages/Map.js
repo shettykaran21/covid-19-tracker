@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import ReactTooltip from 'react-tooltip';
 
 import MapChart from '../components/MapChart/MapChart';
-import Title from '../components/Title/Title';
 import { SummaryContext } from '../contexts/SummaryContext';
 
 const Map = () => {
