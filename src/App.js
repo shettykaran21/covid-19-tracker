@@ -10,6 +10,7 @@ import Analytics from './pages/Analytics';
 import About from './pages/About';
 
 import SummaryContextProvider from './contexts/SummaryContext';
+import DayOneContextProvider from './contexts/DayOneContext';
 
 import './App.css';
 
@@ -21,7 +22,9 @@ const App = () => {
         <main className="main">
           <div className="container">
             <SummaryContextProvider>
-              <Route exact path="/" component={Home} global={global} />
+              <DayOneContextProvider>
+                <Route exact path="/" component={Home} global={global} />
+              </DayOneContextProvider>
               <Route path="/analytics" component={Analytics} />
               <Route path="/about" component={About} />
             </SummaryContextProvider>
