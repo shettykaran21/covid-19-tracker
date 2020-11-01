@@ -15,7 +15,7 @@ const Map = () => {
       <MapChart setTooltipContent={setContent} countriesData={countriesData} />
       <ReactTooltip>
         <div style={{ fontSize: '1.6rem', textAlign: 'center' }}>
-          <div>{content.NAME}</div>
+          <h2>{content.NAME}</h2>
           <div>
             {content.TotalConfirmed
               ? `Total Confirmed: ${content.TotalConfirmed}`
@@ -25,6 +25,12 @@ const Map = () => {
             {' '}
             {content.TotalDeaths
               ? `Total Deaths: ${content.TotalDeaths}`
+              : ''}{' '}
+          </div>
+          <div>
+            {' '}
+            {content.TotalRecovered
+              ? `Total Recovered: ${content.TotalRecovered}`
               : ''}{' '}
           </div>
         </div>

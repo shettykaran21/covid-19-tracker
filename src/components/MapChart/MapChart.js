@@ -80,6 +80,8 @@ const MapChart = ({ setTooltipContent, countriesData }) => {
                           current !== undefined ? current.TotalConfirmed : '',
                         TotalDeaths:
                           current !== undefined ? current.TotalDeaths : '',
+                        TotalRecovered:
+                          current !== undefined ? current.TotalRecovered : '',
                       });
                     }}
                     onMouseLeave={() => {
