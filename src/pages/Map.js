@@ -10,7 +10,7 @@ const Map = () => {
   const { countriesData } = useContext(SummaryContext);
 
   return (
-    <div style={{ marginTop: '10rem', padding: '' }}>
+    <div style={{ marginTop: 'var(--nav-height)', padding: '' }}>
       {/* <Title title="Covid-19 Map" /> */}
       <MapChart setTooltipContent={setContent} countriesData={countriesData} />
       <ReactTooltip>

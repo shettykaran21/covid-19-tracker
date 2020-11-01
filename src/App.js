@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer';
 
 import Home from './pages/Home';
 import Map from './pages/Map';
-import Contact from './pages/Contact';
+import Analytics from './pages/Analytics';
 import About from './pages/About';
 
 import SummaryContextProvider from './contexts/SummaryContext';
@@ -22,7 +22,7 @@ const App = () => {
           <div className="container">
             <SummaryContextProvider>
               <Route exact path="/" component={Home} global={global} />
-              <Route path="/contact" component={Contact} />
+              <Route path="/analytics" component={Analytics} />
               <Route path="/about" component={About} />
             </SummaryContextProvider>
           </div>

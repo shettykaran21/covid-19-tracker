@@ -15,7 +15,7 @@ const Home = () => {
   } = useContext(SummaryContext);
 
   return (
-    <div className="home" style={{ marginTop: '10rem' }}>
+    <div className="home" style={{ marginTop: 'var(--nav-height)' }}>
       <Overview
         totalConfirmed={totalConfirmed}
         totalDeaths={totalDeaths}

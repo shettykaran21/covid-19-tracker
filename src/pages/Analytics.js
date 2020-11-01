@@ -3,7 +3,7 @@ import Title from '../components/Title/Title';
 
 const Analytics = () => {
   return (
-    <div className="analytics" style={{ marginTop: '8rem' }}>
+    <div className="analytics" style={{ marginTop: 'var(--nav-height)' }}>
       <Title title="Analytics" />
     </div>
   );

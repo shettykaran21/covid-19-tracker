@@ -20,7 +20,7 @@ const Navbar = () => {
         <ul className={styles.list}>
           <NavItem menu="Home" path="/" />
           <NavItem menu="Map" path="/map" />
-          <NavItem menu="Contact" path="/contact" />
+          <NavItem menu="Analytics" path="/analytics" />
           <NavItem menu="About" path="/about" />
           <NavItem
             menu="More"

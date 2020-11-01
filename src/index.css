@@ -19,6 +19,8 @@
   --color-grey-2: #2a2e35;
   --color-grey-3: #454e56;
   --color-grey-4: #6c7983;
+
+  --nav-height: 8rem;
 }
 
 html {
