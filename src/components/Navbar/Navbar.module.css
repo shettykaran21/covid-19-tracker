@@ -9,6 +9,7 @@
   letter-spacing: 0.15rem;
   box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
   font-weight: 700;
+  z-index: 999;
 }
 
 .container {
