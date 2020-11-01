@@ -1,6 +1,7 @@
 import React from 'react';
 
 import InfoCard from '../InfoCard/InfoCard';
+import Title from '../Title/Title';
 
 import styles from './Overview.module.css';
 
@@ -33,7 +34,7 @@ const Overview = ({
   return (
     <div className={styles.overview}>
       <div style={{ marginBottom: '3rem' }}>
-        <h2>Overview</h2>
+        <Title title="Overview" />
         <p
           style={{
             fontWeight: '300',

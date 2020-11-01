@@ -1,0 +1,16 @@
+.heading {
+  text-align: center;
+  padding: 3rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 0.5rem;
+  background-color: cyan;
+  left: 0;
+  top: 75%;
+}

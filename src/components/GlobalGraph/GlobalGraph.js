@@ -13,12 +13,7 @@ import {
 import Title from '../Title/Title';
 
 const GlobalGraph = ({ dayOneData }) => {
-  console.log(dayOneData);
-  const formatDate = (date) => {
-    const dateObj = new Date(date);
-
-    return `${dateObj}`;
-  };
+  // console.log(dayOneData);
 
   return (
     <div>
