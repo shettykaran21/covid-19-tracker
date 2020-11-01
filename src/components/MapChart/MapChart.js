@@ -5,7 +5,7 @@ import {
   Geographies,
   Geography,
 } from 'react-simple-maps';
-import { scaleLinear } from 'd3-scale';
+import { scaleQuantile } from 'd3-scale';
 
 import styles from './MapChart.module.css';
 
@@ -25,16 +25,20 @@ const MapChart = ({ setTooltipContent, countriesData }) => {
     '#782618',
   ];
 
+  console.log(countriesData);
+
   const DEFAULT_COLOR = '#EEE';
 
-  const colorScale = scaleLinear().domain([0, 50000]).range(COLOR_RANGE);
+  const colorScale = scaleQuantile()
+    .domain(countriesData.map((d) => d.TotalConfirmed))
+    .range(COLOR_RANGE);
 
   const geographyStyle = {
     default: {
       outline: 'none',
     },
     hover: {
-      fill: '#eee',
+      // fill: '#eee',
       transition: 'all 250ms',
       outline: 'none',
     },
