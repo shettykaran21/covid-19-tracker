@@ -50,7 +50,7 @@ const MapChart = ({ setTooltipContent, countriesData }) => {
   return (
     <div className={styles.mapChart}>
       <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
-        <ZoomableGroup>
+        <ZoomableGroup zoom={1}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map((geo) => {
