@@ -16,7 +16,10 @@ const AnalyticsTable = ({ countriesData }) => {
     return (
       <tr key={CountryCode}>
         <td>
-          <img src={`https://www.countryflags.io/${CountryCode}/flat/32.png`} />
+          <img
+            src={`https://www.countryflags.io/${CountryCode}/flat/32.png`}
+            alt={CountryCode}
+          />
           {Country}
         </td>
         <td>{formatNumber(TotalConfirmed)}</td>
