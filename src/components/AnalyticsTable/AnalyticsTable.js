@@ -1,22 +1,27 @@
 import React from 'react';
 
+import { formatNumber } from '../InfoCard/InfoCard';
+
 import styles from './AnalyticsTable.module.css';
 
 const AnalyticsTable = ({ countriesData }) => {
-  console.log(countriesData);
-
   const countriesDataRow = countriesData.map((countryData) => {
+    const {
+      Country,
+      CountryCode,
+      TotalConfirmed,
+      TotalDeaths,
+      TotalRecovered,
+    } = countryData;
     return (
-      <tr>
+      <tr key={CountryCode}>
         <td>
-          <img
-            src={`https://www.countryflags.io/${countryData.CountryCode}/flat/32.png`}
-          />
-          {countryData.Country}
+          <img src={`https://www.countryflags.io/${CountryCode}/flat/32.png`} />
+          {Country}
         </td>
-        <td>{countryData.TotalConfirmed}</td>
-        <td>{countryData.TotalDeaths}</td>
-        <td>{countryData.TotalRecovered}</td>
+        <td>{formatNumber(TotalConfirmed)}</td>
+        <td>{formatNumber(TotalDeaths)}</td>
+        <td>{formatNumber(TotalRecovered)}</td>
       </tr>
     );
   });

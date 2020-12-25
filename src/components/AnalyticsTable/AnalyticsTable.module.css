@@ -2,7 +2,6 @@
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  font-family: sans-serif;
   min-width: 400px;
   font-size: 2rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -27,6 +26,10 @@
   justify-content: center;
   align-items: center;
   gap: 0.6rem;
+}
+
+.analyticsTable tbody tr td:not(:first-child) {
+  font-size: 1.8rem;
 }
 
 .analyticsTable tbody tr:nth-of-type(even) {
