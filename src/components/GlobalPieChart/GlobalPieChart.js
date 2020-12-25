@@ -49,7 +49,7 @@ const GlobalPieChart = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
         outerRadius={80}
         fill="#8884d8"
         label
-        visibility={'hidden'}
+        visibility={'visible'}
       >
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
