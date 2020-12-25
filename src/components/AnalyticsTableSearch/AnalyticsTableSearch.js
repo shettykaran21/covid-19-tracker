@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import styles from './AnalyticsTableSearch.module.css';
+
 const AnalyticsTableSearch = ({ handleInput }) => {
   const [value, setValue] = useState('');
 
@@ -8,7 +10,7 @@ const AnalyticsTableSearch = ({ handleInput }) => {
   };
 
   return (
-    <div onKeyUp={onKeyUp}>
+    <div onKeyUp={onKeyUp} className={styles.container}>
       <input
         type="text"
         name="search"
@@ -17,6 +19,7 @@ const AnalyticsTableSearch = ({ handleInput }) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
+      <div class={styles.search}></div>
     </div>
   );
 };

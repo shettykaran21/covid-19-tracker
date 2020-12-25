@@ -6,25 +6,17 @@ import styles from './AnalyticsTable.module.css';
 
 const AnalyticsTable = ({ countriesData }) => {
   const countriesDataRow = countriesData.map((countryData) => {
-    const {
-      Country,
-      CountryCode,
-      TotalConfirmed,
-      TotalDeaths,
-      TotalRecovered,
-    } = countryData;
     return (
-      <tr key={CountryCode}>
+      <tr>
         <td>
           <img
-            src={`https://www.countryflags.io/${CountryCode}/flat/32.png`}
-            alt={CountryCode}
+            src={`https://www.countryflags.io/${countryData.CountryCode}/flat/32.png`}
           />
-          {Country}
+          {countryData.Country}
         </td>
-        <td>{formatNumber(TotalConfirmed)}</td>
-        <td>{formatNumber(TotalDeaths)}</td>
-        <td>{formatNumber(TotalRecovered)}</td>
+        <td>{formatNumber(countryData.TotalConfirmed)}</td>
+        <td>{formatNumber(countryData.TotalDeaths)}</td>
+        <td>{formatNumber(countryData.TotalRecovered)}</td>
       </tr>
     );
   });

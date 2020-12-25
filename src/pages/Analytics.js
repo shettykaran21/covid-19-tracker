@@ -25,7 +25,14 @@ const Analytics = () => {
   };
 
   return (
-    <div className="analytics" style={{ marginTop: 'var(--nav-height)' }}>
+    <div
+      className="analytics"
+      style={{
+        marginTop: 'var(--nav-height)',
+        position: 'relative',
+        padding: '3rem 0',
+      }}
+    >
       <Title title="Analytics" />
       <AnalyticsTableSearch handleInput={handleInput} />
       <AnalyticsTable countriesData={filteredCountriesData} />
