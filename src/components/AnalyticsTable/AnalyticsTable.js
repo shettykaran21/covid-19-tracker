@@ -7,7 +7,7 @@ import styles from './AnalyticsTable.module.css';
 const AnalyticsTable = ({ countriesData }) => {
   const countriesDataRow = countriesData.map((countryData) => {
     return (
-      <tr>
+      <tr key={countryData.CountryCode}>
         <td>
           <img
             src={`https://www.countryflags.io/${countryData.CountryCode}/flat/32.png`}

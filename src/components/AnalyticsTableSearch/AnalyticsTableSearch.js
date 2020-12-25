@@ -19,7 +19,7 @@ const AnalyticsTableSearch = ({ handleInput }) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <div class={styles.search}></div>
+      <div className={styles.search}></div>
     </div>
   );
 };
