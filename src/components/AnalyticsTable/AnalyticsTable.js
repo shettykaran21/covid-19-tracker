@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 
 import { formatNumber } from '../InfoCard/InfoCard';
 import useSortableData from '../../hooks/useSortableData';
@@ -16,17 +16,22 @@ const AnalyticsTable = ({ countriesData }) => {
   };
 
   const countriesDataRow = items.map((item) => {
+    const {
+      Country,
+      CountryCode,
+      TotalConfirmed,
+      TotalDeaths,
+      TotalRecovered,
+    } = item;
     return (
-      <tr key={item.CountryCode}>
+      <tr key={CountryCode}>
         <td>
-          <img
-            src={`https://www.countryflags.io/${item.CountryCode}/flat/32.png`}
-          />
-          {item.Country}
+          <img src={`https://www.countryflags.io/${CountryCode}/flat/32.png`} />
+          {Country}
         </td>
-        <td>{formatNumber(item.TotalConfirmed)}</td>
-        <td>{formatNumber(item.TotalDeaths)}</td>
-        <td>{formatNumber(item.TotalRecovered)}</td>
+        <td>{formatNumber(TotalConfirmed)}</td>
+        <td>{formatNumber(TotalDeaths)}</td>
+        <td>{formatNumber(TotalRecovered)}</td>
       </tr>
     );
   });
