@@ -9,7 +9,7 @@
     "axios": "^0.20.0",
     "d3-scale": "^3.2.3",
     "framer-motion": "^3.1.1",
-    "install": "^0.13.0",
+    "node-sass": "^5.0.0",
     "react": "^16.13.1",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
@@ -41,8 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "node-sass": "^4.14.1"
   }
 }
