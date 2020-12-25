@@ -1,7 +1,8 @@
 import React from 'react';
+import { FaCaretDown, FaCaretUp } from 'react-icons/fa';
 
-import { formatNumber } from '../InfoCard/InfoCard';
 import useSortableData from '../../hooks/useSortableData';
+import AnalyticsTableRow from '../AnalyticsTableRow/AnalyticsTableRow';
 
 import styles from './AnalyticsTable.module.css';
 
@@ -15,25 +16,8 @@ const AnalyticsTable = ({ countriesData }) => {
     return sortConfig.key === name ? sortConfig.direction : undefined;
   };
 
-  const countriesDataRow = items.map((item) => {
-    const {
-      Country,
-      CountryCode,
-      TotalConfirmed,
-      TotalDeaths,
-      TotalRecovered,
-    } = item;
-    return (
-      <tr key={CountryCode}>
-        <td>
-          <img src={`https://www.countryflags.io/${CountryCode}/flat/32.png`} />
-          {Country}
-        </td>
-        <td>{formatNumber(TotalConfirmed)}</td>
-        <td>{formatNumber(TotalDeaths)}</td>
-        <td>{formatNumber(TotalRecovered)}</td>
-      </tr>
-    );
+  const tableBodyData = items.map((item) => {
+    return <AnalyticsTableRow item={item} key={item.CountryCode} />;
   });
 
   return (
@@ -44,41 +28,63 @@ const AnalyticsTable = ({ countriesData }) => {
             <button
               type="button"
               onClick={() => requestSort('Country')}
-              className={getClassNamesFor('Country')}
+              className={`${getClassNamesFor('Country')} ${styles.button}`}
             >
               Location
+              <span className={styles.icon}>
+                <FaCaretUp className={styles.icon1} />
+                <FaCaretDown className={styles.icon2} />
+              </span>
             </button>
           </th>
           <th>
             <button
               type="button"
               onClick={() => requestSort('TotalConfirmed')}
-              className={getClassNamesFor('TotalConfirmed')}
+              className={`${getClassNamesFor('TotalConfirmed')} ${
+                styles.button
+              }`}
             >
               Confirmed
+              <span className={styles.icon}>
+                <FaCaretUp className={styles.icon1} />
+                <FaCaretDown className={styles.icon2} />
+              </span>
             </button>
           </th>
           <th>
             <button
               type="button"
               onClick={() => requestSort('TotalDeaths')}
-              className={getClassNamesFor('TotalDeahs')}
+              className={`${getClassNamesFor('TotalDeaths')} ${styles.button} ${
+                styles.totalDeaths
+              }`}
             >
               Deaths
+              <span className={styles.icon}>
+                <FaCaretUp className={styles.icon1} />
+                <FaCaretDown className={styles.icon2} />
+              </span>
             </button>
           </th>
           <th>
             <button
               type="button"
               onClick={() => requestSort('TotalRecovered')}
-              className={getClassNamesFor('TotalRecovered')}
+              className={`${getClassNamesFor('TotalRecovered')} ${
+                styles.button
+              } ${styles.totalRecovered}`}
             >
               Recovered
+              <span className={styles.icon}>
+                <FaCaretUp className={styles.icon1} />
+                <FaCaretDown className={styles.icon2} />
+              </span>
             </button>
           </th>
         </tr>
       </thead>
-      <tbody>{countriesDataRow}</tbody>
+      <tbody>{tableBodyData}</tbody>
     </table>
   );
 };

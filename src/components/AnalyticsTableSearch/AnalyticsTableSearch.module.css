@@ -1,8 +1,6 @@
 .container {
   position: absolute;
-  margin: 0 auto;
-  top: 5rem;
-  left: 0;
+  top: 4rem;
   right: 0;
   bottom: 0;
   width: 30rem;
@@ -16,9 +14,9 @@
   right: 0;
   bottom: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
-  background: var(--color-grey-3);
+  width: 5rem;
+  height: 5rem;
+  background: var(--color-grey-2);
   border-radius: 50%;
   transition: all 1s;
   z-index: 4;
@@ -52,8 +50,8 @@
   right: 0;
   bottom: 0;
   left: -5px;
-  width: 12.5px;
-  height: 12.5px;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   border: 2px solid white;
   transition: all 0.5s;
@@ -67,25 +65,27 @@
   right: 0;
   bottom: 0;
   left: 0;
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
   outline: none;
   border: none;
-  background: var(--color-grey-3);
+  background: var(--color-grey-2);
   color: white;
-  text-shadow: 0 0 10px var(--color-grey-3);
-  padding: 0 80px 0 20px;
+  text-shadow: 0 0 10px var(--color-grey-2);
+  padding: 0 8rem 0 2rem;
   border-radius: 30px;
-  box-shadow: 0 0 5px 0 var(--color-grey-3), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 0 var(--color-grey-2), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s;
   opacity: 0;
   z-index: 5;
   font-weight: bolder;
   letter-spacing: 0.1em;
+  transform-origin: left;
 }
 .container input:hover {
   cursor: pointer;
 }
+
 .container input:focus {
   width: 300px;
   opacity: 1;

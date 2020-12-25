@@ -1,9 +1,8 @@
 .analyticsTable {
   border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  font-size: 2rem;
+  margin: 2.5rem 0;
+  min-width: 40rem;
+  font-size: 1.8rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   width: 100%;
   border-radius: 5px 5px 0 0;
@@ -23,9 +22,9 @@
 
 .analyticsTable tbody tr td:first-child {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 0.6rem;
+  margin-left: 10rem;
+  gap: 1rem;
 }
 
 .analyticsTable tbody tr td:not(:first-child) {
@@ -38,4 +37,42 @@
 
 .analyticsTable tbody tr:last-of-type {
   border-bottom: 2px solid var(--color-grey-3);
+}
+
+.button {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 1.5rem 3.2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: inherit;
+  font-family: inherit;
+  position: relative;
+}
+
+.button .icon {
+  position: absolute;
+  top: 0.5rem;
+}
+
+.button .icon1 {
+  position: absolute;
+  top: 0.7rem;
+}
+
+.button .icon2 {
+  position: absolute;
+  top: 1.7rem;
+}
+
+.totalDeaths {
+  color: var(--color-red);
+}
+
+.totalRecovered {
+  color: var(--color-green);
 }

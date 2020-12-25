@@ -13,7 +13,7 @@
   --artichoke: #86855dff;
   --pacific-blue: #17a2b8ff;
 
-  --color-red: #c22808ff;
+  --color-red: #d66679;
   --color-green: #29a90c;
   --color-grey-1: #12181b;
   --color-grey-2: #2a2e35;
@@ -45,15 +45,15 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #919191;
+  background: var(--color-grey-2);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #444;
+  background: var(--color-grey-3);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--color-grey-4);
 }
