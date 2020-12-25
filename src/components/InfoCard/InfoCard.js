@@ -22,6 +22,11 @@ export const formatNumber = (num) => {
   return res;
 };
 
+export const convertToInteger = (str) => {
+  const newStr = str.replace(/,/g, '-');
+  return newStr;
+};
+
 const InfoCard = ({ data, title, textColor }) => {
   return (
     <div className={styles.infoCard}>
