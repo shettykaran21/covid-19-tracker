@@ -2,7 +2,25 @@ import React from 'react';
 
 import styles from './AnalyticsTable.module.css';
 
-const AnalyticsTable = () => {
+const AnalyticsTable = ({ countriesData }) => {
+  console.log(countriesData);
+
+  const countriesDataRow = countriesData.map((countryData) => {
+    return (
+      <tr>
+        <td>
+          <img
+            src={`https://www.countryflags.io/${countryData.CountryCode}/flat/32.png`}
+          />
+          {countryData.Country}
+        </td>
+        <td>{countryData.TotalConfirmed}</td>
+        <td>{countryData.TotalDeaths}</td>
+        <td>{countryData.TotalRecovered}</td>
+      </tr>
+    );
+  });
+
   return (
     <table className={styles.analyticsTable}>
       <thead>
@@ -13,26 +31,7 @@ const AnalyticsTable = () => {
           <th>Recovered</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>
-            <img src="https://www.countryflags.io/in/flat/32.png" />
-            India
-          </td>
-          <td>6000</td>
-          <td>6000</td>
-          <td>6000</td>
-        </tr>
-        <tr>
-          <td>
-            <img src="https://www.countryflags.io/US/flat/32.png" />
-            United States of America
-          </td>
-          <td>6000</td>
-          <td>6000</td>
-          <td>6000</td>
-        </tr>
-      </tbody>
+      <tbody>{countriesDataRow}</tbody>
     </table>
   );
 };
