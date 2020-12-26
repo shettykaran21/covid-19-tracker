@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { formatNumber } from '../InfoCard/InfoCard';
 
+import styles from './AnalyticsTableRow.module.css';
+
 const AnalyticsTableRow = ({ item }) => {
   const {
     Country,
@@ -20,6 +22,7 @@ const AnalyticsTableRow = ({ item }) => {
       <td>
         <img src={imgSrc} alt={CountryCode} />
         <Link
+          className={styles.countryLink}
           to={{
             pathname: `/analytics/${Slug}`,
             state: {
