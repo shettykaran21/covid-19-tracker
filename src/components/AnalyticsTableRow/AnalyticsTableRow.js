@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { formatNumber } from '../InfoCard/InfoCard';
+import { formatNumber } from '../utilityFunctions';
 
 import styles from './AnalyticsTableRow.module.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Legend, Tooltip, Cell } from 'recharts';
 
-import { formatNumber } from '../InfoCard/InfoCard';
+import { formatNumber } from '../utilityFunctions';
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
