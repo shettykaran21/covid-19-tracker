@@ -12,10 +12,7 @@ import Analytics from './pages/Analytics';
 import AnalyticsCountry from './pages/AnalyticsCountry';
 import AboutCovid19 from './pages/AboutCovid19';
 import FlattenTheCurve from './pages/FlattenTheCurve';
-<<<<<<< HEAD
 import News from './pages/News';
-=======
->>>>>>> 3dc87a5295cb4d6efe2374dd18bcbd0fda2e6fdc
 
 import SummaryContextProvider from './contexts/SummaryContext';
 import DayOneContextProvider from './contexts/DayOneContext';
