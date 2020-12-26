@@ -1,12 +1,42 @@
 .dropdownMenu {
   font-weight: 400;
   position: absolute;
-  top: 7.8rem;
+  top: 6.6rem;
   border: 0.05rem solid var(--color-grey-3);
-  width: 30rem;
-  transform: translateX(-30%);
+  width: 25rem;
+  transform: translateX(-50%);
   background-color: var(--color-grey-2);
   border-radius: 1rem;
   padding: 1.6rem;
   overflow: hidden;
+}
+
+.dropdownItem {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+  padding: 0.8rem;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.dropdownItem:hover {
+  background-color: var(--color-grey-3);
+}
+
+.dropDownMenu.clicked {
+  display: none;
+}
+
+.dropdownLink {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: inherit;
+}
+
+.iconButton {
+  margin-top: 0.5rem;
 }
