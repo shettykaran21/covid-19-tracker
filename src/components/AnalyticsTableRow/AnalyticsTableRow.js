@@ -13,14 +13,27 @@ const AnalyticsTableRow = ({ item }) => {
     Slug,
   } = item;
 
+  const imgSrc = `https://www.countryflags.io/${CountryCode}/flat/32.png`;
+
   return (
     <tr>
       <td>
-        <img
-          src={`https://www.countryflags.io/${CountryCode}/flat/32.png`}
-          alt={CountryCode}
-        />
-        <Link to={`/analytics/${Slug}`}>{Country}</Link>
+        <img src={imgSrc} alt={CountryCode} />
+        <Link
+          to={{
+            pathname: `/analytics/${Slug}`,
+            state: {
+              Country,
+              CountryCode,
+              TotalConfirmed,
+              TotalDeaths,
+              TotalRecovered,
+              imgSrc,
+            },
+          }}
+        >
+          {Country}
+        </Link>
       </td>
       <td>{formatNumber(TotalConfirmed)}</td>
       <td>{formatNumber(TotalDeaths)}</td>
