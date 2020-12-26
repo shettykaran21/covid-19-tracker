@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -19,28 +19,30 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <Main>
-          <Container>
-            <SummaryContextProvider>
-              <DayOneContextProvider>
-                <Route exact path="/" component={Home} global={global} />
-              </DayOneContextProvider>
-              <Route exact path="/analytics" component={Analytics} />
-              <Route
-                exact
-                path="/analytics/:slug"
-                component={AnalyticsCountry}
-              />
-            </SummaryContextProvider>
-          </Container>
-          <SummaryContextProvider>
-            <Route path="/map" component={Map} />
-          </SummaryContextProvider>
-        </Main>
-      </BrowserRouter>
-      <Footer />
+      <SummaryContextProvider>
+        <DayOneContextProvider>
+          <BrowserRouter>
+            <Navbar />
+
+            <Switch>
+              <Main>
+                <Container>
+                  <Route exact path="/" component={Home} global={global} />
+                  <Route exact path="/analytics" component={Analytics} />
+                  <Route
+                    exact
+                    path="/analytics/:slug"
+                    component={AnalyticsCountry}
+                  />
+                </Container>
+                <Route path="/map" component={Map} />
+              </Main>
+            </Switch>
+
+            <Footer />
+          </BrowserRouter>
+        </DayOneContextProvider>
+      </SummaryContextProvider>
     </div>
   );
 };
