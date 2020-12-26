@@ -12,6 +12,7 @@ import Analytics from './pages/Analytics';
 import AnalyticsCountry from './pages/AnalyticsCountry';
 import AboutCovid19 from './pages/AboutCovid19';
 import FlattenTheCurve from './pages/FlattenTheCurve';
+import News from './pages/News';
 
 import SummaryContextProvider from './contexts/SummaryContext';
 import DayOneContextProvider from './contexts/DayOneContext';
@@ -41,6 +42,7 @@ const App = () => {
                     path="/flatten-the-curve"
                     component={FlattenTheCurve}
                   />
+                  <Route path="/news" component={News} />
                 </Container>
                 <Route path="/map" component={Map} />
               </Main>

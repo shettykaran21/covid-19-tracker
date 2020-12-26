@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaChartArea, FaUserMd } from 'react-icons/fa';
+import { FaChartArea, FaNewspaper, FaUserMd } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 import styles from './DropdownMenu.module.css';
@@ -14,6 +14,11 @@ const dropdownItems = [
     title: 'Flatten the curve',
     path: '/flatten-the-curve',
     icon: <FaChartArea />,
+  },
+  {
+    title: 'News',
+    path: '/news',
+    icon: <FaNewspaper />,
   },
 ];
 
