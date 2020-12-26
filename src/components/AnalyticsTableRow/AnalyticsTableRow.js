@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { formatNumber } from '../InfoCard/InfoCard';
 
@@ -9,6 +10,7 @@ const AnalyticsTableRow = ({ item }) => {
     TotalConfirmed,
     TotalDeaths,
     TotalRecovered,
+    Slug,
   } = item;
 
   return (
@@ -18,7 +20,7 @@ const AnalyticsTableRow = ({ item }) => {
           src={`https://www.countryflags.io/${CountryCode}/flat/32.png`}
           alt={CountryCode}
         />
-        {Country}
+        <Link to={`/analytics/${Slug}`}>{Country}</Link>
       </td>
       <td>{formatNumber(TotalConfirmed)}</td>
       <td>{formatNumber(TotalDeaths)}</td>
