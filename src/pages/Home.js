@@ -24,8 +24,8 @@ const Home = () => {
     position: 'fixed',
     top: '15%',
     right: '20px',
-    width: '120px',
-    height: '120px',
+    width: '7rem',
+    height: '7  rem',
   };
 
   const {
@@ -64,16 +64,8 @@ const Home = () => {
             scaleX: -1, // Reverse direction of line animation
           }}
         />
-        <motion.path
-          fill="none"
-          strokeWidth="3"
-          stroke="white"
-          d="M14,26 L 22,33 L 35,16"
-          initial={false}
-          strokeDasharray="0 1"
-          animate={{ pathLength: isComplete ? 1 : 0 }}
-        />
       </svg>
+
       <Overview
         totalConfirmed={totalConfirmed}
         totalDeaths={totalDeaths}

@@ -7,7 +7,6 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import Map from './pages/Map';
 import Analytics from './pages/Analytics';
-import About from './pages/About';
 
 import SummaryContextProvider from './contexts/SummaryContext';
 import DayOneContextProvider from './contexts/DayOneContext';
@@ -26,7 +25,6 @@ const App = () => {
                 <Route exact path="/" component={Home} global={global} />
               </DayOneContextProvider>
               <Route path="/analytics" component={Analytics} />
-              <Route path="/about" component={About} />
             </SummaryContextProvider>
           </div>
           <SummaryContextProvider>

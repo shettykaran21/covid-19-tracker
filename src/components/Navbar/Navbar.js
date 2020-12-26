@@ -21,7 +21,6 @@ const Navbar = () => {
           <NavItem menu="Home" path="/" />
           <NavItem menu="Map" path="/map" />
           <NavItem menu="Analytics" path="/analytics" />
-          <NavItem menu="About" path="/about" />
           <NavItem
             menu="More"
             path={useLocation().pathname}
