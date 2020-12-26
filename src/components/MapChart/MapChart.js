@@ -7,6 +7,8 @@ import {
 } from 'react-simple-maps';
 import { scaleQuantile } from 'd3-scale';
 
+import { formatNumber } from '../utilityFunctions';
+
 import styles from './MapChart.module.css';
 
 const geoUrl =
@@ -77,11 +79,17 @@ const MapChart = ({ setTooltipContent, countriesData }) => {
                       setTooltipContent({
                         NAME: NAME,
                         TotalConfirmed:
-                          current !== undefined ? current.TotalConfirmed : '',
+                          current !== undefined
+                            ? formatNumber(current.TotalConfirmed)
+                            : '',
                         TotalDeaths:
-                          current !== undefined ? current.TotalDeaths : '',
+                          current !== undefined
+                            ? formatNumber(current.TotalDeaths)
+                            : '',
                         TotalRecovered:
-                          current !== undefined ? current.TotalRecovered : '',
+                          current !== undefined
+                            ? formatNumber(current.TotalRecovered)
+                            : '',
                       });
                     }}
                     onMouseLeave={() => {
