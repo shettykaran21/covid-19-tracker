@@ -5,7 +5,7 @@ import { FaCaretDown } from 'react-icons/fa';
 import NavItem from '../NavItem/NavItem';
 import DropdownMenu from '../DropdownMenu/DropdownMenu';
 
-import logo from '../../logo.svg';
+import logo from '../../img/logo.svg';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
