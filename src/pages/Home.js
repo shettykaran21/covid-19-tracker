@@ -76,7 +76,7 @@ const Home = () => {
         newRecovered={newRecovered}
       />
       <div>
-        <GlobalGraph dayOneData={dayOneData} />
+        <GlobalGraph data={dayOneData} />
         <GlobalPieChart
           totalConfirmed={totalConfirmed}
           totalDeaths={totalDeaths}

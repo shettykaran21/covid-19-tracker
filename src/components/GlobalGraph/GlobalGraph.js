@@ -12,17 +12,17 @@ import {
 
 import Title from '../Title/Title';
 
-const GlobalGraph = ({ dayOneData }) => {
-  // console.log(dayOneData);
+const GlobalGraph = ({ data }) => {
+  // console.log(data);
 
   return (
     <div>
-      <Title title="Global Graph" />
+      <Title title="Line Graph (India)" />
       <ResponsiveContainer width={'100%'} height={400}>
         <LineChart
           width={1200}
           height={600}
-          data={dayOneData.data}
+          data={data.data}
           margin={{
             top: 5,
             right: 30,
