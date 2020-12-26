@@ -10,7 +10,7 @@
 
 .newsImage {
   display: block;
-  height: 15rem;
+  max-height: 16rem;
   border-radius: 1rem;
 }
 
@@ -18,7 +18,30 @@
   margin-bottom: 1.5rem;
 }
 
+.newsDescription {
+  margin-bottom: 1rem;
+}
+
 .newsLink {
   color: var(--color-white);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 16rem;
+  justify-content: space-between;
+  color: #6ba2f1;
+}
+
+.newsLink:hover {
+  text-decoration: underline;
+}
+
+.newsExtras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsExtrasRight {
+  opacity: 0.8;
 }
