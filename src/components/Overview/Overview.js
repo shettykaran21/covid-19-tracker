@@ -1,6 +1,7 @@
 import React from 'react';
 
 import InfoCard from '../InfoCard/InfoCard';
+import InfoCardContainer from '../InfoCardContainer/InfoCardContainer';
 import Title from '../Title/Title';
 
 import styles from './Overview.module.css';
@@ -45,7 +46,7 @@ const Overview = ({
           Last Updated: <span>{formatDate(date)}</span>
         </p>
       </div>
-      <div className={styles.data}>
+      <InfoCardContainer>
         <InfoCard data={totalConfirmed} title="Total Confirmed" />
         <InfoCard
           data={totalDeaths}
@@ -68,7 +69,7 @@ const Overview = ({
           title="New Recovered"
           textColor="var(--color-green)"
         />
-      </div>
+      </InfoCardContainer>
     </div>
   );
 };
