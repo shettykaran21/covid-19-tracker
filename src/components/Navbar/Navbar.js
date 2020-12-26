@@ -46,6 +46,9 @@ const Navbar = () => {
           <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <Link to={useLocation().pathname} className={styles.listLink}>
               More
+              <div>
+                <FaCaretDown />
+              </div>
             </Link>
             {dropdown && <DropdownMenu />}
           </li>
