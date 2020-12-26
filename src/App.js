@@ -3,6 +3,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import Main from './components/Main/Main';
+import Container from './components/Container/Container';
 
 import Home from './pages/Home';
 import Map from './pages/Map';
@@ -19,8 +21,8 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <main className="main">
-          <div className="container">
+        <Main>
+          <Container>
             <SummaryContextProvider>
               <DayOneContextProvider>
                 <Route exact path="/" component={Home} global={global} />
@@ -32,11 +34,11 @@ const App = () => {
                 component={AnalyticsCountry}
               />
             </SummaryContextProvider>
-          </div>
+          </Container>
           <SummaryContextProvider>
             <Route path="/map" component={Map} />
           </SummaryContextProvider>
-        </main>
+        </Main>
       </BrowserRouter>
       <Footer />
     </div>
