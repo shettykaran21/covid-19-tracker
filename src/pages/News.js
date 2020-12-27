@@ -5,16 +5,19 @@ import news from '../api/news';
 import NewsArticle from '../components/NewsArticle/NewsArticle';
 import Title from '../components/Title/Title';
 
+const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
+
 const News = () => {
   const [data, setData] = useState({});
 
   const getData = async () => {
-    const response = await axios.get(
-      'http://newsapi.org/v2/top-headlines?' +
-        'q=covid&' +
-        'country=in&' +
-        'apiKey=583a8a26978845cdb9a7b838b2ea3854'
-    );
+    const response = await axios.get('http://newsapi.org/v2/top-headlines', {
+      params: {
+        q: 'covid',
+        country: 'in',
+        apiKey: API_KEY,
+      },
+    });
 
     const responseData = response.data;
     setData(responseData);
