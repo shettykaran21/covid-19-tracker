@@ -7,7 +7,6 @@ import {
 } from 'framer-motion';
 
 import Overview from '../components/Overview/Overview';
-import GlobalGraph from '../components/GlobalGraph/GlobalGraph';
 import GlobalPieChart from '../components/GlobalPieChart/GlobalPieChart';
 import { SummaryContext } from '../contexts/SummaryContext';
 import { DayOneContext } from '../contexts/DayOneContext';
