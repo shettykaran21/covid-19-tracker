@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-const url = 'http://newsapi.org/v2';
+const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
 export default axios.create({
-  baseURL: url,
+  baseURL: 'http://newsapi.org/v2',
+  params: {
+    apiKey: API_KEY,
+  },
 });
