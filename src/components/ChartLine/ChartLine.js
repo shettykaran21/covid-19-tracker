@@ -14,6 +14,7 @@ import {
 } from 'recharts';
 
 import TitleSecondary from '../Title/Title';
+import { formatNumber } from '../utils';
 
 const ChartLine = ({ data }) => {
   // console.log(data);
@@ -45,7 +46,7 @@ const ChartLine = ({ data }) => {
             </defs>
             <XAxis dataKey="name" />
             <YAxis />
-            <Tooltip />
+            <Tooltip formatter={formatNumber} />
             <Area
               type="monotone"
               dataKey="Confirmed"
@@ -78,6 +79,7 @@ const ChartLine = ({ data }) => {
             height={300}
             data={newData}
             margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+            style={{ margin: '0 auto' }}
           >
             <defs>
               <linearGradient id="colorSv" x1="0" y1="0" x2="0" y2="1">
@@ -90,7 +92,7 @@ const ChartLine = ({ data }) => {
               label={{ value: 'pv of page', position: 'insideLeft' }}
             />
             <YAxis />
-            <Tooltip />
+            <Tooltip formatter={formatNumber} />
             <Area
               type="monotone"
               dataKey="Deaths"

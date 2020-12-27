@@ -37,7 +37,11 @@ const GlobalPieChart = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
     { name: 'Total Recovered', value: totalRecovered },
   ];
 
-  const COLORS = ['#ff073a70', '#00C49F', '#FFBB28'];
+  const COLORS = [
+    'var(--color-white)',
+    'var(--color-red)',
+    'var(--color-green)',
+  ];
 
   return (
     <PieChart width={385} height={385} style={{ margin: '0 auto' }}>
