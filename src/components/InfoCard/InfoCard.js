@@ -1,7 +1,7 @@
 import React from 'react';
 import CountUp from 'react-countup';
 
-import { formatNumber } from '../utilityFunctions';
+import { formatNumber } from '../utils';
 
 import styles from './InfoCard.module.css';
 

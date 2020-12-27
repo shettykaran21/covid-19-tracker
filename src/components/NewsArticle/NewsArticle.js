@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaRegNewspaper } from 'react-icons/fa';
 
-import { formatDate } from '../utilityFunctions';
+import { formatDate } from '../utils';
 
 import styles from './NewsArticle.module.css';
 

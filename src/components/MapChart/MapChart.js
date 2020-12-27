@@ -7,7 +7,7 @@ import {
 } from 'react-simple-maps';
 import { scaleQuantile } from 'd3-scale';
 
-import { formatNumber } from '../utilityFunctions';
+import { formatNumber } from '../utils';
 
 import styles from './MapChart.module.css';
 
