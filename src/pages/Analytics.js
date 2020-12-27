@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import Loader from 'react-loader-spinner';
 
 import Title from '../components/Title/Title';
 import AnalyticsTable from '../components/AnalyticsTable/AnalyticsTable';
@@ -34,8 +35,25 @@ const Analytics = () => {
       }}
     >
       <Title title="Analytics" />
-      <AnalyticsTableSearch handleInput={handleInput} />
-      <AnalyticsTable countriesData={filteredCountriesData} />
+      {countriesData ? (
+        <div>
+          <AnalyticsTableSearch handleInput={handleInput} />
+          <AnalyticsTable countriesData={filteredCountriesData} />
+        </div>
+      ) : (
+        <Loader
+          type="Puff"
+          color="cyan"
+          height={80}
+          width={80}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '40vh',
+          }}
+        />
+      )}
     </div>
   );
 };

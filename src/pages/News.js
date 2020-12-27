@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import Loader from 'react-loader-spinner';
 
 import news from '../api/news';
 import NewsArticle from '../components/NewsArticle/NewsArticle';
@@ -37,7 +38,7 @@ const News = () => {
     getData();
   }, []);
 
-  console.log(everythingData);
+  // console.log(everythingData);
 
   return (
     <div
@@ -51,6 +52,7 @@ const News = () => {
       <div
         style={{
           marginBottom: '10rem',
+          minHeight: '100vh',
         }}
       >
         <Title title="Latest News" />
@@ -60,7 +62,18 @@ const News = () => {
               return <NewsArticle key={index} article={article} />;
             })
           ) : (
-            <div>Loading...</div>
+            <Loader
+              type="Puff"
+              color="cyan"
+              height={80}
+              width={80}
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '40vh',
+              }}
+            />
           )}
         </div>
       </div>
