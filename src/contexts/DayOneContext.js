@@ -8,7 +8,7 @@ const DayOneContextProvider = (props) => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
-    const response = await covid.get('/dayone/country/india/status/confirmed');
+    const response = await covid.get('/dayone/country/india');
 
     const responseData = response.data;
 

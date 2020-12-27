@@ -4,6 +4,7 @@ import covid from '../api/covid';
 import InfoCard from '../components/InfoCard/InfoCard';
 import InfoCardContainer from '../components/InfoCardContainer/InfoCardContainer';
 import CountryName from '../components/CountryName/CountryName';
+import ChartLine from '../components/ChartLine/ChartLine';
 
 const AnalyticsCountry = (props) => {
   const [data, setData] = useState([]);
@@ -26,8 +27,6 @@ const AnalyticsCountry = (props) => {
   useEffect(() => {
     getData();
   }, []);
-
-  console.log(data);
 
   return (
     <div style={{ marginTop: 'var(--nav-height)' }}>
@@ -66,6 +65,7 @@ const AnalyticsCountry = (props) => {
           %
         </InfoCard>
       </InfoCardContainer>
+      <ChartLine data={data} />
     </div>
   );
 };

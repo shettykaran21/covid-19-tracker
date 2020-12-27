@@ -40,7 +40,7 @@ const GlobalPieChart = ({ totalConfirmed, totalDeaths, totalRecovered }) => {
   const COLORS = ['#ff073a70', '#00C49F', '#FFBB28'];
 
   return (
-    <PieChart width={385} height={385}>
+    <PieChart width={385} height={385} style={{ margin: '0 auto' }}>
       <Pie
         dataKey="value"
         data={data}

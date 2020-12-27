@@ -11,6 +11,7 @@ import GlobalGraph from '../components/GlobalGraph/GlobalGraph';
 import GlobalPieChart from '../components/GlobalPieChart/GlobalPieChart';
 import { SummaryContext } from '../contexts/SummaryContext';
 import { DayOneContext } from '../contexts/DayOneContext';
+import ChartLine from '../components/ChartLine/ChartLine';
 
 const Home = () => {
   const [isComplete, setIsComplete] = useState(false);
@@ -39,6 +40,8 @@ const Home = () => {
   } = useContext(SummaryContext);
 
   const dayOneData = useContext(DayOneContext);
+
+  console.log(dayOneData.data);
 
   return (
     <div
@@ -76,7 +79,7 @@ const Home = () => {
         newRecovered={newRecovered}
       />
       <div>
-        <GlobalGraph data={dayOneData} />
+        <ChartLine data={dayOneData.data} />
         <GlobalPieChart
           totalConfirmed={totalConfirmed}
           totalDeaths={totalDeaths}
