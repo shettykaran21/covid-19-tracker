@@ -48,6 +48,23 @@ const AnalyticsCountry = (props) => {
           title="Total Recovered"
           textColor="var(--color-green)"
         />
+        <InfoCard data={TotalConfirmed - TotalRecovered} title="Active Cases" />
+        <InfoCard
+          data={((TotalDeaths / TotalConfirmed) * 100).toFixed(2)}
+          title="Fatality Rate"
+          textColor="var(--color-red)"
+          countUp="false"
+        >
+          %
+        </InfoCard>
+        <InfoCard
+          data={((TotalRecovered / TotalConfirmed) * 100).toFixed(2)}
+          title="Recovery Rate"
+          textColor="var(--color-green)"
+          countUp="false"
+        >
+          %
+        </InfoCard>
       </InfoCardContainer>
     </div>
   );
