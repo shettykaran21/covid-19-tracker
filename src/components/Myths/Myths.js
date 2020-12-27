@@ -3,6 +3,7 @@ import { FaBrain } from 'react-icons/fa';
 
 import { myths } from '../myths';
 import QuestionCard from '../QuestionCard/QuestionCard';
+import TitleSecondary from '../TitleSecondary/TitleSecondary';
 
 import styles from './Myths.module.css';
 
@@ -38,7 +39,7 @@ const Myths = () => {
     }
   };
 
-  console.log(userAnswers);
+  // console.log(userAnswers);
 
   const nextQuestion = () => {
     const nextQues = number + 1;
@@ -62,14 +63,14 @@ const Myths = () => {
 
   return (
     <div className={styles.myths}>
-      <h2>
-        Myths <FaBrain fill="pink" />
-      </h2>
+      <TitleSecondary title="MYTHS">
+        <FaBrain fill="pink" fontSize="3rem" />
+      </TitleSecondary>
 
       {gameover || userAnswers.length === TOTAL_QUESTIONS ? (
         <button
-          onClick={startTrivia}
           className={`${styles.button} ${styles.buttonUjarak} ${styles.buttonBorderThin} ${styles.buttonTextThick}`}
+          onClick={startTrivia}
         >
           Start
         </button>
@@ -93,7 +94,11 @@ const Myths = () => {
       !loading &&
       userAnswers.length === number + 1 &&
       number !== TOTAL_QUESTIONS - 1 ? (
-        <button className={styles.next} onClick={nextQuestion}>
+        <button
+          className={styles.next}
+          onClick={nextQuestion}
+          className={`${styles.button} ${styles.buttonUjarak} ${styles.buttonBorderThin} ${styles.buttonTextThick}`}
+        >
           Next Myth
         </button>
       ) : null}

@@ -1,15 +1,20 @@
 .myths {
   background-color: var(--color-grey-2);
-  min-height: 31rem;
+  min-height: 60rem;
   border-radius: 0.5rem;
+  margin: 0 auto;
   padding: 4rem;
   width: 60rem;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 15rem;
+}
+
+.heading {
+  font-size: 3.5rem;
 }
 
 .button {
