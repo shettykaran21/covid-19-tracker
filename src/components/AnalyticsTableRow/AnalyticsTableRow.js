@@ -13,6 +13,9 @@ const AnalyticsTableRow = ({ item }) => {
     TotalDeaths,
     TotalRecovered,
     Slug,
+    NewRecovered,
+    NewConfirmed,
+    NewDeaths,
   } = item;
 
   const imgSrc = `https://www.countryflags.io/${CountryCode}/flat/32.png`;
@@ -39,8 +42,11 @@ const AnalyticsTableRow = ({ item }) => {
         </Link>
       </td>
       <td>{formatNumber(TotalConfirmed)}</td>
+      <td className={styles.new}>+ {formatNumber(NewConfirmed)}</td>
       <td>{formatNumber(TotalDeaths)}</td>
+      <td className={styles.new}>+ {formatNumber(NewDeaths)}</td>
       <td>{formatNumber(TotalRecovered)}</td>
+      <td className={styles.new}>+ {formatNumber(NewRecovered)}</td>
     </tr>
   );
 };

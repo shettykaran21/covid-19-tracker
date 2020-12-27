@@ -20,6 +20,10 @@
   padding: 1.2rem 1.5rem;
 }
 
+.analyticsTable th img {
+  height: 1.5rem;
+}
+
 .analyticsTable tbody tr td:first-child {
   display: flex;
   align-items: center;

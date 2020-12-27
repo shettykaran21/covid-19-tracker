@@ -4,6 +4,7 @@ import { FaCaretDown, FaCaretUp } from 'react-icons/fa';
 import useSortableData from '../../hooks/useSortableData';
 import AnalyticsTableRow from '../AnalyticsTableRow/AnalyticsTableRow';
 
+import growthLogo from '../../img/growth.svg';
 import styles from './AnalyticsTable.module.css';
 
 const AnalyticsTable = ({ countriesData }) => {
@@ -53,6 +54,9 @@ const AnalyticsTable = ({ countriesData }) => {
             </button>
           </th>
           <th>
+            <img src={growthLogo} alt="growth-logo" />
+          </th>
+          <th>
             <button
               type="button"
               onClick={() => requestSort('TotalDeaths')}
@@ -68,6 +72,9 @@ const AnalyticsTable = ({ countriesData }) => {
             </button>
           </th>
           <th>
+            <img src={growthLogo} alt="growth-logo" />
+          </th>
+          <th>
             <button
               type="button"
               onClick={() => requestSort('TotalRecovered')}
@@ -81,6 +88,9 @@ const AnalyticsTable = ({ countriesData }) => {
                 <FaCaretDown className={styles.icon2} />
               </span>
             </button>
+          </th>
+          <th>
+            <img src={growthLogo} alt="growth-logo" />
           </th>
         </tr>
       </thead>

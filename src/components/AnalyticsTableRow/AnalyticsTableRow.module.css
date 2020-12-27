@@ -1,3 +1,7 @@
 .countryLink {
   color: var(--color-white);
 }
+
+.new {
+  font-size: 1.4rem !important;
+}
