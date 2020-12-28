@@ -87,6 +87,7 @@ const Myths = () => {
           answers={questions[number].answers}
           userAnswer={userAnswers ? userAnswers[number] : undefined}
           callback={checkAnswer}
+          fact={questions[number].fact}
         />
       )}
 

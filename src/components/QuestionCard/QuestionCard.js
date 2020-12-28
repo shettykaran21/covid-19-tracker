@@ -22,6 +22,7 @@ const QuestionCard = ({
   userAnswer,
   questionNo,
   totalQuestions,
+  fact,
 }) => {
   return (
     <div className={styles.questionCard}>
@@ -47,6 +48,8 @@ const QuestionCard = ({
       ) : (
         <div></div>
       )}
+
+      {userAnswer && <div className={styles.fact}>{fact}</div>}
     </div>
   );
 };
