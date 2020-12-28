@@ -2,15 +2,14 @@
   background-color: var(--color-grey-2);
   min-height: 60rem;
   border-radius: 0.5rem;
-  margin: 4rem auto;
+  /* margin: 4rem auto; */
   padding: 4rem;
-  width: 80rem;
+  /* width: 60rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 15rem;
 }
 
 .heading {

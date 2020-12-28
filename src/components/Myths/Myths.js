@@ -63,8 +63,8 @@ const Myths = () => {
 
   return (
     <div className={styles.myths}>
-      <TitleSecondary title="MYTHS">
-        <FaBrain fill="pink" fontSize="3rem" />
+      <TitleSecondary title="     MYTHS">
+        <FaBrain fill="pink" fontSize="5rem" />
       </TitleSecondary>
 
       {gameover || userAnswers.length === TOTAL_QUESTIONS ? (
