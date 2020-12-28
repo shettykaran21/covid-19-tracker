@@ -1,0 +1,46 @@
+.symptoms {
+  padding: 3rem;
+}
+
+.feature-box {
+  background-color: rgba(29, 34, 36, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(rgba(0, 0, 0), 0.15);
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.03);
+}
+
+.feature-box__icon {
+  font-size: 6rem;
+  display: inline-block;
+  background: linear-gradient(
+    to right,
+    var(--color-grey-2),
+    var(--color-grey-3)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-features {
+  padding: 5rem;
+  margin: 5rem 0;
+  background: linear-gradient(
+    to right,
+    var(--color-grey-2),
+    var(--color-grey-2)
+  );
+}
+
+.section-features-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 5rem;
+}

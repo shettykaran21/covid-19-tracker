@@ -15,10 +15,10 @@
 
   --color-red: #d66679;
   --color-green: #29a90c;
-  --color-grey-1: #12181b;
+  --color-grey-1: rgb(18, 24, 27);
   --color-grey-2: #2a2e35;
   --color-grey-3: #454e56;
-  --color-grey-4: #6c7983;
+  --color-grey-4: rgb(108, 121, 131);
 
   --nav-height: 8rem;
 }
